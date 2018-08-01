@@ -31,6 +31,22 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 results: state.results.concat({id: new Date(),value: state.counter}) 
 
+            };
+        case 'DELETE_RESULT':
+            //const id = 2;
+            // const newArray = [...state.results];
+            // newArray.splice(id, 1);
+            // console.log("Im clicked!!", newArray);
+            
+            //const updatedArray = state.results.filter(element => true);
+            //array.prototype.filter method retuns a new array dose not tuch the old one
+            // if callback function inside filter returns true for all elements 
+            // then filtered array will be full copy of the old one
+            
+            const updatedArray = state.results.filter((element, index) => element.id !== action.resultElementID);
+            return {
+                ...state,
+                results: updatedArray
             }
         default:
             return state;
