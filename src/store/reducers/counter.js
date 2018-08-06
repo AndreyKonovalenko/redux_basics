@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
     counter: 0
@@ -9,7 +9,7 @@ const counter = (state = initialState, action) => {
         case actionTypes.INCREMENT:
             // classic way of immutable object copying
             const newState = Object.assign({}, state); 
-            newState.counter = state.counter + 1;
+            newState.counter = state.counter + action.value;
             return newState;
         case actionTypes.DECREMENT: 
             return {
