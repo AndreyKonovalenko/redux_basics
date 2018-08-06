@@ -35,14 +35,14 @@ export const subtract = (number) => {
     }
 };
 
-export const store_result = (result) => {
+export const storeResult = (result) => {
     return {
         type: STORE_RESULT,
         current_result: result
     }
 };
 
-export const delete_result = (id) => {
+export const deleteResult = (id) => {
     return {
         type: DELETE_RESULT,
         resultElementID: id
